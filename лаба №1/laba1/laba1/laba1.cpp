@@ -1,11 +1,22 @@
-﻿// laba1.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
+﻿// Example.cpp : Этот файл содержит функцию "main". Здесь начинается и заканчивается выполнение программы.
 //
 
 #include <iostream>
+#include "Matrix.h"
+
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    Complex number(1, 1);
+    Complex number2(5, 5);
+
+    Complex summ = number + number2;
+    Complex summ2 = number + 5;
+    Complex summ3 = 5 + number;
+
+    std::cout << number.Re() << " + i*" << number.Im();
+    std::cout << "\n" << number2;
+
 }
 
 // Запуск программы: CTRL+F5 или меню "Отладка" > "Запуск без отладки"
