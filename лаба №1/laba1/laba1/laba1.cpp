@@ -4,7 +4,7 @@
 
 int main()
 {
-    Complex number(1, 1);
+    Complex number(1,67);
     Complex number2(5, 5);
 
     Complex summ = number + number2;
