@@ -11,7 +11,7 @@ private:
 
 public:
 	Complex(); //конструктор по умолчанию
-	Complex(const Complex& var); // конструктор копировани
+	Complex(const Complex& var); // конструктор копирования
 	Complex(double real); //конструктор с параметром из действительного числа
 	Complex(double re, double im); // конструктор с параметром из пары чисел
 
