@@ -1,4 +1,4 @@
-#include "Matrix.h"
+#include "Complex.h"
 
 Complex::Complex() : realPart(0), imaginaryPart(0) // способ инициализации полей
 {
@@ -7,7 +7,7 @@ Complex::Complex() : realPart(0), imaginaryPart(0) // способ инициализации полей
 Complex::Complex(const Complex& var)
 {
 	//дргуой способ инициализации полей
-	this->realPart = var.realPart; //this - это указатель на объект для которого будет вызва метод
+	this->realPart = var.realPart; //this - это указатель на объект для которого будет вызван метод
 	this->imaginaryPart = var.imaginaryPart;
 }
 

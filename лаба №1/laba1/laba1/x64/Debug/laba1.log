@@ -1,1 +1,7 @@
-﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(439,5): error MSB8020: Не удается найти средства сборки для v143 (набор инструментов платформы = "v143"). Чтобы выполнить сборку с использованием средств сборки v143 установите средства сборки v143.  Кроме того, можно выполнить обновление до текущей версии средств Visual Studio, перейдя в меню "Проект" или щелкнув решение правой кнопкой мыши и выбрав "Обновить решение...".
+﻿  complex.cpp
+  laba1.cpp
+D:\Users\ppg2\source\repos\OOP\лаба №1\laba1\laba1\laba1.cpp(18,12): error C2371: a: переопределение; различные базовые типы
+D:\Users\ppg2\source\repos\OOP\лаба №1\laba1\laba1\laba1.cpp(17): message : см. объявление "a"
+  Matrix.cpp
+  Создание кода...
+D:\Users\ppg2\source\repos\OOP\лаба №1\laba1\laba1\Matrix.cpp(11): error C4716: Matrix::pechat: должна возвращать значение
