@@ -1,0 +1,5 @@
+﻿  Class.cpp
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\ConsoleApplication1\ConsoleApplication1\Class.cpp(273,31): warning C4244: =: преобразование "double" в "float", возможна потеря данных
+  ConsoleApplication1.cpp
+  Создание кода...
+  ConsoleApplication1.vcxproj -> C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\ConsoleApplication1\x64\Debug\ConsoleApplication1.exe

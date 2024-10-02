@@ -1,14 +1,19 @@
 #include <math.h>
 #include <iostream>
+#include <vector>
 
 class Matrix
 {
 private:
-	double matrix;
+	int rows, cols;
+	std::vector<std::vector<double>> matrix;
 public:
 	Matrix(); //конструктор по умолчанию
 	Matrix& operator=(const Matrix& var) = default; //оператор присваивания, пример с ключевым словом default (осуществит битовое копирование поле)
 	~Matrix() = default;
 
-	double pechat();
+	std::vector< std::vector<double>> getMatrix();
+	void print();
+	void multiplication_by_number(); 
+	void multiplication_by_matrix();
 };
