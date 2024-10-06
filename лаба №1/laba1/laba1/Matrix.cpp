@@ -1,5 +1,13 @@
 #include "Matrix.h"
 
+void Matrix::setitem(int rows, int cols, double value) {
+	this->matrix[rows][cols] = value;
+}
+
+double Matrix::getitem(int Rows, int Cols)
+{
+	return matrix[Rows][Cols];
+}
 
 Matrix::Matrix() : matrix(0) // способ инициализации полей
 {
@@ -10,14 +18,25 @@ Matrix::Matrix() : matrix(0) // способ инициализации полей
 	std::cin >> cols;
 	for (int i = 0; i < rows; i++) {
 			matrix[i].resize(cols);
-
-		}
+	}
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
 			std::cin >> matrix[i][j];
 		}
 	}
 }
+
+Matrix::Matrix(int rows, int cols)
+{
+	this->rows = rows;
+	this->cols = cols;
+	this->matrix.resize(rows);
+	for (int i = 0; i < rows; i++) {
+		matrix[i].resize(cols);
+	}
+}
+
+
 
 
 std::vector< std::vector<double>> Matrix::getMatrix()
@@ -35,21 +54,90 @@ void Matrix::print()
 	}
 }
 
-void Matrix::multiplication_by_number()
+Matrix Matrix::multiplication_by_number()
 {
+	this->rows;
+	this->cols;
 	std::cout << "Введите число на которое хотите умножить матрицу:";
 	double pr;
 	std::cin >> pr;
+	Matrix result(rows, cols);
 	for (int i = 0; i < rows; i++) {
 		for (int j = 0; j < cols; j++) {
-			matrix[i][j]= matrix[i][j] * pr;
+			result.setitem(i, j, matrix[i][j] * pr);
 		}
 	}
+	return result;
 }
 
-void Matrix::multiplication_by_matrix(std::vector< std::vector<double>> mat1, std::vector< std::vector<double>> mat2 )
+Matrix Matrix::transp()
 {
-	std::vector< std::vector<double>> mat3 = mat1 * mat2;
+	Matrix result(cols, rows);
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			result.setitem(j, i, matrix[i][j]);
+		}
+	}
+	return result;
 }
+
+void  Matrix::det()
+{
+	double det = 0;
+	double a = 1;
+	Matrix result(rows, cols +2);
+	for (int i = 0; i < rows; i++) {
+		for (int j = 0; j < cols; j++) {
+			result.setitem(i, j, matrix[i][j]);
+		}
+	}
+	for (int i = 0; i < rows; i++) {
+		for (int j = cols; j < 2+cols; j++) {
+			result.setitem(i, j, matrix[i][abs(cols-j)]);
+		}
+	}
+	for (int j = 0; j < cols * 2 - rows; j++) {
+		a = result.getitem(0,j);
+		for (int t = 1; t < rows; t++) {
+			a = a * result.getitem(0 + t, j + t);
+		}
+		det = det + a;
+	}
+
+	for (int j = cols+1; j >= rows - 1; j--) {
+		a = result.getitem(0, j);
+		for (int t = 1; t < rows; t++) {
+			a = a * result.getitem(0 + t, j - t);
+		}
+		det = det - a;
+	}
+
+	std::cout << det<<std::endl;
+	
+}
+
+//void Matrix::multiplication_by_matrix(std::vector< std::vector<double>> mat1, std::vector< std::vector<double>> mat2 )
+//{
+//	if (mat1.size() == mat2[0].size()) {
+//		std::vector< std::vector<double>> mat3;
+//		mat3.resize(mat1.size());
+//		for (int i = 0; i < mat1.size(); i++) {
+//			mat3[i].resize(mat2[0].size());
+//		}
+//		for (int i = 0; i < mat1.size(); i++) {
+//			for (int j = 0; j < mat2[0].size(); j++) {
+//				for (int t = 0; t < mat1.size(); t++) {
+//					mat3[i][j] += mat1[i][t] * mat2[t][j];
+//				}
+//			}
+//		}
+//		for (int i = 0; i < mat3.size(); i++) {
+//			for (int j = 0; j < mat3[0].size(); j++) {
+//				std::cout << matrix[i][j] << " ";
+//			}
+//			std::cout << "\n";
+//		}
+//	}
+//}
 
 

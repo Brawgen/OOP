@@ -18,7 +18,7 @@ int main()
     Matrix a;
     a.print();
     std::cout << "\n";
-    a.multiplication_by_number();
+    a.det();
+    std::cout << "\n";
     a.print();
-
 }
