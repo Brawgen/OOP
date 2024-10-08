@@ -81,40 +81,36 @@ Matrix Matrix::transp()
 	return result;
 }
 
-void  Matrix::det()
+double  Matrix::det()
 {
-	double det = 0;
-	double a = 1;
-	Matrix result(rows, cols +2);
-	for (int i = 0; i < rows; i++) {
-		for (int j = 0; j < cols; j++) {
-			result.setitem(i, j, matrix[i][j]);
-		}
+	if (cols == 1 and rows == 1) {
+		std::cout << matrix[0][0];
 	}
-	for (int i = 0; i < rows; i++) {
-		for (int j = cols; j < 2+cols; j++) {
-			result.setitem(i, j, matrix[i][abs(cols-j)]);
-		}
+	if (cols == 2 and rows == 2) {
+		std::cout << (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);
 	}
-	for (int j = 0; j < cols * 2 - rows; j++) {
-		a = result.getitem(0,j);
-		for (int t = 1; t < rows; t++) {
-			a = a * result.getitem(0 + t, j + t);
-		}
-		det = det + a;
-	}
+	if (cols > 2 and rows > 2 and cols == rows) {
+		double deter = 0;
+		for (int i = 0; i < cols; i++) {
+			int sign = 1;
+			if (i % 2 == 1) {
+				sign = -1;
+				std::vector<std::vector<double>> Detr(cols - 1, std::vector<double>(cols - 1));
+				Detr = Minor(i, 0, Detr);
+				deter = deter + sign * Det[0][i] * Deter(cols - 1, Detr);
 
-	for (int j = cols+1; j >= rows - 1; j--) {
-		a = result.getitem(0, j);
-		for (int t = 1; t < rows; t++) {
-			a = a * result.getitem(0 + t, j - t);
+			}
 		}
-		det = det - a;
+		return deter;
 	}
-
-	std::cout << det<<std::endl;
 	
 }
+
+std::vector<std::vector<double>> Matrix::Minor(int line, int column, std::vector<std::vector<double>> matr) {
+	std::vector < std::vector <double> > Min(matrix.size() - 1, std::vector<double>(matrix.size() - 1));
+	for (int i =0; i<m)
+}
+
 
 //void Matrix::multiplication_by_matrix(std::vector< std::vector<double>> mat1, std::vector< std::vector<double>> mat2 )
 //{
