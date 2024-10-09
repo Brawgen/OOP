@@ -96,7 +96,7 @@ double  Matrix::det()
 			if (i % 2 == 1) {
 				sign = -1;
 				std::vector<std::vector<double>> Detr(cols - 1, std::vector<double>(cols - 1));
-				Detr = Minor(i, 0, Detr);
+				Detr = Minor(i, 0, matrix);
 				deter = deter + sign * Det[0][i] * Deter(cols - 1, Detr);
 
 			}
@@ -106,10 +106,44 @@ double  Matrix::det()
 	
 }
 
-std::vector<std::vector<double>> Matrix::Minor(int line, int column, std::vector<std::vector<double>> matr) {
-	std::vector < std::vector <double> > Min(matrix.size() - 1, std::vector<double>(matrix.size() - 1));
-	for (int i =0; i<m)
+std::vector<std::vector<double>> Matrix::Minor(int line, int column, std::vector<std::vector<double>> matrix)
+{
+	int Rows = this->rows;
+	int Cols = this->cols;
+	std::vector<std::vector<double>> minor(Rows - 1, std::vector<double>(Cols - 1));
+	bool flag1 = false;
+	bool flag2 = false;
+	for (int i = 0; i < Rows - 1; i++) {
+		for (int j = 0; j < Cols - 1; j++) {
+			if (i == line) {
+				flag1 = true;
+			}
+			if (j == column) {
+				flag2 = true;
+			}
+			if (flag1 == false) {
+				minor[i][j] = matrix[i][j];
+			}
+			if (flag1 == true and flag2==false) {
+				minor[i][j] = matrix[i + 1][j];
+			}
+			if (flag1==false and flag2 == true) {
+				minor[i][j] = matrix[i][j + 1];
+			}
+			if (flag2 == true and flag1 == true) {
+				minor[i][j] = matrix[i + 1][j + 1];
+			}
+		}
+	}
+	for (int i = 0; i < rows - 1; i++) {
+		for (int j = 0; j < cols - 1; j++) {
+			std::cout << minor[i][j];
+		}
+	}
+	return minor;
 }
+
+
 
 
 //void Matrix::multiplication_by_matrix(std::vector< std::vector<double>> mat1, std::vector< std::vector<double>> mat2 )

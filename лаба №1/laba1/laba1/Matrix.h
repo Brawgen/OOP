@@ -21,5 +21,5 @@ public:
 	//Matrix multiplication_by_matrix(std::vector< std::vector<double>> mat1, std::vector< std::vector<double>> mat2);
 	Matrix transp();
 	double det();
-	std::vector<std::vector<double>> Matrix::Minor(int line, int column, std::vector<std::vector<double>> matr);
+	std::vector<std::vector<double>> Minor(int line, int column, std::vector<std::vector<double>> matr);
 };
