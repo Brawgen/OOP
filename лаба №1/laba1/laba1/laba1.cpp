@@ -18,6 +18,6 @@ int main()
     Matrix a;
     a.print();
     std::cout << "\n";
-    a.Minor(1, 0);
-    std::cout << "\n";
+    a.Minor(0, 1);
+
 }

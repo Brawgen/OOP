@@ -81,40 +81,54 @@ Matrix Matrix::transp()
 	return result;
 }
 
-double  Matrix::det()
+double  Matrix::det(int size, std::vector<std::vector<double>> matrix)
 {
-	if (cols == 1 and rows == 1) {
-		std::cout << matrix[0][0];
+	double deter = 0;
+	if (size == 1 ) {
+		deter= matrix[0][0];
 	}
-	if (cols == 2 and rows == 2) {
-		std::cout << (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);
+	if (size == 2) {
+		deter= (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);
 	}
-	if (cols > 2 and rows > 2 and cols == rows) {
-		double deter = 0;
-		for (int i = 0; i < cols; i++) {
+	if (size>2) {
+		for (int i = 0; i < size; i++)
+		{
 			int sign = 1;
-			if (i % 2 == 1) {
+			if (i % 2 == 1)
+			{
 				sign = -1;
-				std::vector<std::vector<double>> Detr(cols - 1, std::vector<double>(cols - 1));
-				Detr = Minor(i, 0, matrix);
-				deter = deter + sign * Det[0][i] * Deter(cols - 1, Detr);
-
 			}
+			std::vector < std::vector <double> > Detr(size - 1, std::vector<double>(size - 1));
+			//Detr = Minor(0, i, matrix);
+			deter = deter + sign * matrix[0][i] * det(size-1,Detr);
 		}
+	}
+	return deter;
+}
+double Matrix::det()
+{
+	if (cols != rows) {
+		std::cout << "Матрица не кавдратная!";
+		exit(0);
+	}
+	else {
+		double deter;
+		deter = det(cols,matrix);
 		return deter;
 	}
-	
 }
 
-std::vector<std::vector<double>> Matrix::Minor(int line, int column, std::vector<std::vector<double>> matrix)
+std::vector<std::vector<double>> Matrix::Minor(int line, int column)
 {
 	int Rows = this->rows;
 	int Cols = this->cols;
 	std::vector<std::vector<double>> minor(Rows - 1, std::vector<double>(Cols - 1));
-	bool flag1 = false;
-	bool flag2 = false;
+	
 	for (int i = 0; i < Rows - 1; i++) {
 		for (int j = 0; j < Cols - 1; j++) {
+			bool flag1 = false;
+			bool flag2 = false;
+			
 			if (i == line) {
 				flag1 = true;
 			}
@@ -135,13 +149,16 @@ std::vector<std::vector<double>> Matrix::Minor(int line, int column, std::vector
 			}
 		}
 	}
-	for (int i = 0; i < rows - 1; i++) {
-		for (int j = 0; j < cols - 1; j++) {
-			std::cout << minor[i][j];
+	for (int i = 0; i < Rows-1; i++) {
+		for (int j = 0; j < Cols-1; j++) {
+			std::cout << minor[i][j] << " ";
 		}
+		std::cout << "\n";
 	}
 	return minor;
 }
+
+
 
 
 

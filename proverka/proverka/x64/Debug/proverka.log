@@ -1,0 +1,10 @@
+﻿  Matrix.cpp
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\proverka\proverka\Matrix.cpp(5,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\proverka\proverka\Matrix.cpp(6,13): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\proverka\proverka\Matrix.cpp(34,23): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\proverka\proverka\Matrix.cpp(47,25): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\proverka\proverka\Matrix.cpp(50,31): warning C4267: =: преобразование из "size_t" в "int"; возможна потеря данных
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\proverka\proverka\Matrix.cpp(208,11): warning C4267: инициализация: преобразование из "size_t" в "int"; возможна потеря данных
+  proverka.cpp
+  Создание кода...
+  proverka.vcxproj -> C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\proverka\x64\Debug\proverka.exe
