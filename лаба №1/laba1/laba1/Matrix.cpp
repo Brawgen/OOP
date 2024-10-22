@@ -1,190 +1,317 @@
 #include "Matrix.h"
 
-void Matrix::setitem(int rows, int cols, double value) {
-	this->matrix[rows][cols] = value;
+Matrix::Matrix(std::vector<std::vector<double>> vect)
+{
+	int line = vect.size();
+	int column = vect[0].size();
+	this->matr.resize(line, std::vector<double>(column));
+	this->line = line;
+	this->column = column;
+	this->matr = vect;
 }
 
-double Matrix::getitem(int Rows, int Cols)
+Matrix::Matrix(std::string FileName)
 {
-	return matrix[Rows][Cols];
-}
+	std::ifstream file(FileName);
+	if (file.is_open())
+	{
+		std::string str;
+		bool first_line = 1;
+		bool security = 1;
 
-Matrix::Matrix() : matrix(0) // способ инициализации полей
-{
-	std::cout << "Введите число строк:";
-	std::cin >> rows;
-	matrix.resize(rows);
-	std::cout << "Введите число стобцов:";
-	std::cin >> cols;
-	for (int i = 0; i < rows; i++) {
-			matrix[i].resize(cols);
+		while (std::getline(file, str))
+		{
+			std::istringstream flow(str);
+			std::vector<double> rows;
+			double value;
+
+			while (flow >> value)
+			{
+				rows.push_back(value);
+			}
+			if (first_line)
+			{
+				column = rows.size();
+				first_line = 0;
+			}
+			if (rows.size() == column)
+			{
+				matr.push_back(rows);
+			}
+			else
+			{
+				std::cout << "Ошибка.";
+				security = 0;
+			}
+		}
+		this->line = matr.size();
+		if (matr.size() > 0)
+		{
+			this->column = matr[0].size();
+		}
+		if (security == 0)
+		{
+			matr.clear();
+			this->line = 0;
+			this->column = 0;
+		}
+		file.close();
 	}
-	for (int i = 0; i < rows; i++) {
-		for (int j = 0; j < cols; j++) {
-			std::cin >> matrix[i][j];
+	else
+	{
+		std::cout << "Ошибка чтения файла." << "\n";
+		system("pause");
+		exit(0);
+	}
+}
+
+Matrix::Matrix(const Matrix& Mat_1)
+{
+	this->matr = Mat_1.matr;
+	this->line = Mat_1.line;
+	this->column = Mat_1.column;
+}
+
+bool Matrix::operator==(const Matrix& other)
+{
+	if ((this->column != other.column) or (this->line != other.line))
+	{
+		return false;
+	}
+	for (int i = 0; i < this->line; i++)
+	{
+		for (int j = 0; j < this->column; j++)
+		{
+			if (this->matr[i][j] != other.matr[i][j])
+			{
+				return false;
+			}
 		}
 	}
+	return true;
 }
 
-Matrix::Matrix(int rows, int cols)
+void Matrix::print()			//Показать матрицу
 {
-	this->rows = rows;
-	this->cols = cols;
-	this->matrix.resize(rows);
-	for (int i = 0; i < rows; i++) {
-		matrix[i].resize(cols);
-	}
-}
-
-
-
-
-std::vector< std::vector<double>> Matrix::getMatrix()
-{
-	return matrix;
-}
-
-void Matrix::print()
-{
-	for (int i = 0; i < rows; i++) {
-		for (int j = 0; j < cols; j++) {
-			std::cout << matrix[i][j] << " ";
+	for (int i = 0; i < this->line; i++)
+	{
+		for (int j = 0; j < this->column; j++)
+		{
+			std::cout << this->matr[i][j] << " ";
 		}
 		std::cout << "\n";
 	}
 }
 
-Matrix Matrix::multiplication_by_number()
+Matrix Matrix::Multiplication(double a) //Умножение матрицы на число
 {
-	this->rows;
-	this->cols;
-	std::cout << "Введите число на которое хотите умножить матрицу:";
-	double pr;
-	std::cin >> pr;
-	Matrix result(rows, cols);
-	for (int i = 0; i < rows; i++) {
-		for (int j = 0; j < cols; j++) {
-			result.setitem(i, j, matrix[i][j] * pr);
-		}
-	}
-	return result;
-}
-
-Matrix Matrix::transp()
-{
-	Matrix result(cols, rows);
-	for (int i = 0; i < rows; i++) {
-		for (int j = 0; j < cols; j++) {
-			result.setitem(j, i, matrix[i][j]);
-		}
-	}
-	return result;
-}
-
-double  Matrix::det(int size, std::vector<std::vector<double>> matrix)
-{
-	double deter = 0;
-	if (size == 1 ) {
-		deter= matrix[0][0];
-	}
-	if (size == 2) {
-		deter= (matrix[0][0] * matrix[1][1]) - (matrix[0][1] * matrix[1][0]);
-	}
-	if (size>2) {
-		for (int i = 0; i < size; i++)
+	std::vector < std::vector <double> > Multi_vect(this->line, std::vector<double>(this->column));
+	for (int i = 0; i < this->line; i++)
+	{
+		for (int j = 0; j < this->column; j++)
 		{
-			int sign = 1;
-			if (i % 2 == 1)
-			{
-				sign = -1;
-			}
-			std::vector < std::vector <double> > Detr(size - 1, std::vector<double>(size - 1));
-			//Detr = Minor(0, i, matrix);
-			deter = deter + sign * matrix[0][i] * det(size-1,Detr);
+			Multi_vect[i][j] = (a * (this->matr[i][j]));
 		}
+	}
+	Matrix Multi_matr(Multi_vect);
+	return Multi_matr;
+}
+
+
+
+Matrix Matrix::Multiplication(Matrix multi) //Умножение матрицы на матрицу
+{
+	if ((this->column != multi.line) or (this->column == 0) or (this->line == 0) or (multi.line == 0) or (multi.column == 0))
+	{
+		std::cout << "Ошибка умножения матриц." << "\n";
+		Matrix empty;
+		return empty;
+	}
+	line = this->line;
+	int l = this->column;
+	column = multi.column;
+	std::vector < std::vector <double> > Vect(line, std::vector<double>(column));
+	for (int i = 0; i < line; i++)
+	{
+		for (int j = 0; j < column; j++)
+		{
+			Vect[i][j] = 0;
+			for (int k = 0; k < l; k++)
+			{
+				Vect[i][j] = Vect[i][j] + (this->matr[i][k] * multi.matr[k][j]);
+			}
+
+		}
+	}
+	Matrix Multi_matr(Vect);
+	return Multi_matr;
+}
+
+Matrix Matrix::Transpose()		//Транспонирование
+{
+	if ((this->line == 0) or (this->column == 0))
+	{
+		std::cout << "Нельзя транспонировать нулевую матрицу." << "\n";
+		Matrix empty;
+		return empty;
+	}
+	std::vector < std::vector <double> > T(this->column, std::vector<double>(this->line));
+	for (int i = 0; i < this->line; i++)
+	{
+		for (int j = 0; j < this->column; j++)
+		{
+			T[j][i] = this->matr[i][j];
+		}
+	}
+	Matrix Tr(T);
+	return Tr;
+}
+
+double Matrix::Deter(int size, std::vector < std::vector <double> > Det)			//Определитель матрицы
+{
+	if (size == 1)
+	{
+		return Det[0][0];
+	}
+	if (size == 2)
+	{
+		return ((Det[0][0] * Det[1][1]) - (Det[1][0] * Det[0][1]));
+	}
+	double deter = 0;
+	for (int i = 0; i < size; i++)
+	{
+		int sign = 1;
+		if (i % 2 == 1)
+		{
+			sign = -1;
+		}
+		std::vector < std::vector <double> > Detr(size - 1, std::vector<double>(size - 1));
+		Detr = Minor(i, 0, Det);
+		deter = deter + sign * Det[0][i] * Deter(size - 1, Detr);
 	}
 	return deter;
 }
-double Matrix::det()
+
+double Matrix::Deter()					//Проверка на квадратную матрицу и вызов функции для нахождения опрделителя вектора
 {
-	if (cols != rows) {
-		std::cout << "Матрица не кавдратная!";
+	if ((this->column != this->line) or (this->line == 0))
+	{
+		std::cout << "Невозможно найти определитель. Матрица не квадратная или нулевая." << "\n";
+		return NAN;
+	}
+	double Det;
+	Det = Deter(this->column, this->matr);
+	return Det;
+}
+
+std::vector<std::vector<double>> Matrix::Minor(int line, int column, std::vector<std::vector<double>> matr)  //Нахождение миноров матрицы
+{
+	int size = matr.size();
+	std::vector < std::vector <double> > Min(size - 1, std::vector<double>(size - 1));
+	for (int j = 0; j < size - 1; j++)
+	{
+		int shift_c = 0;
+		if (j >= column)
+		{
+			shift_c = 1;
+		}
+		for (int k = 0; k < size - 1; k++)
+		{
+			int shift_l = 0;
+			if (k >= line)
+			{
+				shift_l = 1;
+			}
+			Min[j][k] = matr[j + shift_c][k + shift_l];
+		}
+	}
+	return Min;
+}
+
+Matrix Matrix::Reverse_Mat()
+{
+	if ((this->column != this->line) or (this->line == 0))
+	{
+		std::cout << "Невозможно найти обратную матрицу. Матрица не квадратная или нулевая.";
+		Matrix empty;
+		return empty;
+	}
+	int size = this->line;
+	std::vector < std::vector <double> > Rev_mat(size, std::vector<double>(size));
+	std::vector < std::vector <double> > Min(size - 1, std::vector<double>(size - 1));
+	for (int i = 0; i < size; i++)
+	{
+		for (int j = 0; j < size; j++)
+		{
+			int sign = 1;
+			if ((i + j) % 2 == 1)
+			{
+				sign = -1;
+			}
+			Min = Minor(j, i, this->matr);
+			Rev_mat[i][j] = (sign * Deter(size - 1, Min));
+		}
+	}
+	Matrix Reverse(Rev_mat);
+	Reverse = Reverse.Transpose();
+	double det = Deter(size, this->matr);
+	Reverse = Reverse.Multiplication(1 / det);
+	return Reverse;
+}
+
+void Matrix::FileWrite(std::string NameFile)
+{
+	setlocale(LC_ALL, " ");
+	std::ofstream File;
+	File.open(NameFile);
+
+	if (File.is_open())
+	{
+		for (int i = 0; i < this->line; i++)
+		{
+			for (int j = 0; j < this->column; j++)
+			{
+				File << this->matr[i][j];
+				File << " ";
+			}
+			File << "\n";
+		}
+		File.close();
+	}
+	else
+	{
+		std::cout << "Ошибка чтения файла." << "\n";
+		system("pause");
 		exit(0);
 	}
-	else {
-		double deter;
-		deter = det(cols,matrix);
-		return deter;
-	}
+	return;
 }
 
-std::vector<std::vector<double>> Matrix::Minor(int line, int column)
+void Matrix::TableWrite(std::string NameFile)
 {
-	int Rows = this->rows;
-	int Cols = this->cols;
-	std::vector<std::vector<double>> minor(Rows - 1, std::vector<double>(Cols - 1));
-	
-	for (int i = 0; i < Rows - 1; i++) {
-		for (int j = 0; j < Cols - 1; j++) {
-			bool flag1 = false;
-			bool flag2 = false;
-			
-			if (i == line) {
-				flag1 = true;
+	setlocale(LC_ALL, " ");
+	std::ofstream File;
+	File.open(NameFile);
+
+	if (File.is_open())
+	{
+		for (int i = 0; i < this->line; i++)
+		{
+			for (int j = 0; j < this->column; j++)
+			{
+				File << this->matr[i][j];
+				File << ";";
 			}
-			if (j == column) {
-				flag2 = true;
-			}
-			if (flag1 == false) {
-				minor[i][j] = matrix[i][j];
-			}
-			if (flag1 == true and flag2==false) {
-				minor[i][j] = matrix[i + 1][j];
-			}
-			if (flag1==false and flag2 == true) {
-				minor[i][j] = matrix[i][j + 1];
-			}
-			if (flag2 == true and flag1 == true) {
-				minor[i][j] = matrix[i + 1][j + 1];
-			}
+			File << "\n";
 		}
+		File.close();
 	}
-	for (int i = 0; i < Rows-1; i++) {
-		for (int j = 0; j < Cols-1; j++) {
-			std::cout << minor[i][j] << " ";
-		}
-		std::cout << "\n";
+	else
+	{
+		std::cout << "Ошибка чтения файла." << "\n";
+		system("pause");
+		exit(0);
 	}
-	return minor;
+	return;
 }
-
-
-
-
-
-
-//void Matrix::multiplication_by_matrix(std::vector< std::vector<double>> mat1, std::vector< std::vector<double>> mat2 )
-//{
-//	if (mat1.size() == mat2[0].size()) {
-//		std::vector< std::vector<double>> mat3;
-//		mat3.resize(mat1.size());
-//		for (int i = 0; i < mat1.size(); i++) {
-//			mat3[i].resize(mat2[0].size());
-//		}
-//		for (int i = 0; i < mat1.size(); i++) {
-//			for (int j = 0; j < mat2[0].size(); j++) {
-//				for (int t = 0; t < mat1.size(); t++) {
-//					mat3[i][j] += mat1[i][t] * mat2[t][j];
-//				}
-//			}
-//		}
-//		for (int i = 0; i < mat3.size(); i++) {
-//			for (int j = 0; j < mat3[0].size(); j++) {
-//				std::cout << matrix[i][j] << " ";
-//			}
-//			std::cout << "\n";
-//		}
-//	}
-//}
-
 
