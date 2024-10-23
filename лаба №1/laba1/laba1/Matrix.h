@@ -3,7 +3,7 @@
 #include <fstream>
 #include <vector>
 #include <sstream>
-#include <cmath>
+#include <cmath> 
 
 class Matrix
 {
@@ -15,8 +15,8 @@ public:
 	Matrix(const Matrix& Mat_1);																					//Конструктор копирования
 
 	bool operator==(const Matrix& other);
-	void print();																									//Метод выводящий в консоль матрицу
-	Matrix Multiplication(double a);																				//Метод умножения матрицы на число
+	void print();																						    		 //Метод выводящий в консоль матрицу
+	Matrix negative();																				//Метод умножения матрицы на число
 	Matrix Multiplication(Matrix multi);																			//Метод умножения матрицы на матрицу
 	Matrix Transpose();																								//Метод транспонироания матрицы
 	double Deter();																									//Метод нахождения определителя матрицы

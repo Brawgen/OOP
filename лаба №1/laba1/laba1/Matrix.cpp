@@ -103,14 +103,15 @@ void Matrix::print()			//Показать матрицу
 	}
 }
 
-Matrix Matrix::Multiplication(double a) //Умножение матрицы на число
+Matrix Matrix::negative() //Умножение матрицы на число
 {
 	std::vector < std::vector <double> > Multi_vect(this->line, std::vector<double>(this->column));
 	for (int i = 0; i < this->line; i++)
 	{
 		for (int j = 0; j < this->column; j++)
 		{
-			Multi_vect[i][j] = (a * (this->matr[i][j]));
+			
+				Multi_vect[i][j] = (-1 * (this->matr[i][j]));
 		}
 	}
 	Matrix Multi_matr(Multi_vect);
@@ -228,36 +229,36 @@ std::vector<std::vector<double>> Matrix::Minor(int line, int column, std::vector
 	return Min;
 }
 
-Matrix Matrix::Reverse_Mat()
-{
-	if ((this->column != this->line) or (this->line == 0))
-	{
-		std::cout << "Невозможно найти обратную матрицу. Матрица не квадратная или нулевая.";
-		Matrix empty;
-		return empty;
-	}
-	int size = this->line;
-	std::vector < std::vector <double> > Rev_mat(size, std::vector<double>(size));
-	std::vector < std::vector <double> > Min(size - 1, std::vector<double>(size - 1));
-	for (int i = 0; i < size; i++)
-	{
-		for (int j = 0; j < size; j++)
-		{
-			int sign = 1;
-			if ((i + j) % 2 == 1)
-			{
-				sign = -1;
-			}
-			Min = Minor(j, i, this->matr);
-			Rev_mat[i][j] = (sign * Deter(size - 1, Min));
-		}
-	}
-	Matrix Reverse(Rev_mat);
-	Reverse = Reverse.Transpose();
-	double det = Deter(size, this->matr);
-	Reverse = Reverse.Multiplication(1 / det);
-	return Reverse;
-}
+//Matrix Matrix::Reverse_Mat()
+//{
+//	if ((this->column != this->line) or (this->line == 0))
+//	{
+//		std::cout << "Невозможно найти обратную матрицу. Матрица не квадратная или нулевая.";
+//		Matrix empty;
+//		return empty;
+//	}
+//	int size = this->line;
+//	std::vector < std::vector <double> > Rev_mat(size, std::vector<double>(size));
+//	std::vector < std::vector <double> > Min(size - 1, std::vector<double>(size - 1));
+//	for (int i = 0; i < size; i++)
+//	{
+//		for (int j = 0; j < size; j++)
+//		{
+//			int sign = 1;
+//			if ((i + j) % 2 == 1)
+//			{
+//				sign = -1;
+//			}
+//			Min = Minor(j, i, this->matr);
+//			Rev_mat[i][j] = (sign * Deter(size - 1, Min));
+//		}
+//	}
+//	Matrix Reverse(Rev_mat);
+//	Reverse = Reverse.Transpose();
+//	double det = Deter(size, this->matr);
+//	Reverse = Reverse.Multiplication(1 / det);
+//	return Reverse;
+//}
 
 void Matrix::FileWrite(std::string NameFile)
 {

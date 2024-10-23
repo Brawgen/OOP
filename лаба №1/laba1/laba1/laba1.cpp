@@ -2,10 +2,18 @@
 int main() {
     setlocale(LC_ALL, "ru");
     Matrix Mat_1("Matrix_1.txt");
-    Matrix Mat_2("Matrix_2.txt");
-    Matrix Multi;
-    Matrix Mat_ans;
+    Mat_1.print();
+    std::cout << "\n\n";
+   
+    Matrix negative;
+    
+    negative = Mat_1.negative();
+    negative.print();
+    std::cout << "\n\n";
 
+
+    /* Matrix Mat_ans;
+    Matrix Mat_2("Matrix_2.txt");
     std::cout << "Матрица 1: " << "\n";
     Mat_1.print();
     std::cout << "\n\n";
@@ -42,7 +50,7 @@ int main() {
             std::cout << "Введите число на которое хотите умножить матрицу: ";
             std::cin >> pr;
             std::cout << "Матрица 1  * " << pr << " = " << "\n";
-            Multi = Mat_1.Multiplication(pr);
+            Multi = Mat_1.Multiplication();
             Multi.print();
             std::cout << "\n\n";
         }
@@ -88,7 +96,7 @@ int main() {
             std::cout << "Нет такой команды!" << std::endl;
         }
 
-    } while (1);
+    } while (1);*/
 }
 
 
