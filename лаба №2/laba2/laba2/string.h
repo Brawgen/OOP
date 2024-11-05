@@ -5,11 +5,12 @@
 class String
 {
 public:
-	String(std::string FileName);
+	int filesize();
 	String();
 
 
 	~String() = default;
 private:
-	std::vector < std::vector <double> > string;
+	std::vector < char > string;
+	int size;
 };
