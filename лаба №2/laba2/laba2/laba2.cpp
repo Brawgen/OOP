@@ -1,8 +1,9 @@
 ﻿#include <iostream>
 #include <string>
 #include <vector>
+#include "string.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    String as;
 }

@@ -2,15 +2,14 @@
 #include <fstream>
 #include <vector>
 #include <iostream>
+#include <string>
 class String
 {
 public:
-	int filesize();
 	String();
 
 
-	~String() = default;
 private:
-	std::vector < char > string;
+	std::vector < std::string > string;
 	int size;
 };
