@@ -1,2 +1,270 @@
 ﻿  string.cpp
-  laba2.vcxproj -> C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\x64\Debug\laba2.exe
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(9,21): error C2665: "std::vector<std::vector<std::string,std::allocator<std::string>>,std::allocator<std::vector<std::string,std::allocator<std::string>>>>::push_back": ни одна перегруженная функция не может преобразовать все типы аргументов
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vector(876,23): message : может быть "void std::vector<std::vector<std::string,std::allocator<std::string>>,std::allocator<std::vector<std::string,std::allocator<std::string>>>>::push_back(_Ty &&)"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(9,21): message : "void std::vector<std::vector<std::string,std::allocator<std::string>>,std::allocator<std::vector<std::string,std::allocator<std::string>>>>::push_back(_Ty &&)": невозможно преобразовать аргумент 1 из "std::basic_string<char,std::char_traits<char>,std::allocator<char>>" в "_Ty &&"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(9,36): message : Причина: невозможно преобразовать "std::basic_string<char,std::char_traits<char>,std::allocator<char>>" в "_Ty"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(9,36): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vector(872,23): message : или       "void std::vector<std::vector<std::string,std::allocator<std::string>>,std::allocator<std::vector<std::string,std::allocator<std::string>>>>::push_back(const _Ty &)"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(9,21): message : "void std::vector<std::vector<std::string,std::allocator<std::string>>,std::allocator<std::vector<std::string,std::allocator<std::string>>>>::push_back(const _Ty &)": невозможно преобразовать аргумент 1 из "std::basic_string<char,std::char_traits<char>,std::allocator<char>>" в "const _Ty &"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(9,36): message : Причина: невозможно преобразовать "std::basic_string<char,std::char_traits<char>,std::allocator<char>>" в "const _Ty"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(9,36): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(9,21): message : при попытке сопоставить список аргументов "(std::basic_string<char,std::char_traits<char>,std::allocator<char>>)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): error C2679: бинарный "<<": не найден оператор, принимающий правый операнд типа "_Ty" (или приемлемое преобразование отсутствует)
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(481,39): message : может быть "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(449,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(431,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(413,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(395,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(377,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(359,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(341,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(323,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(304,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(278,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(259,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(225,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(207,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(201,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(195,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(190,39): message : или       "std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(5185,32): message : или       "std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::basic_string<_Elem,_Traits,_Alloc> &)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): message : 'std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::basic_string<_Elem,_Traits,_Alloc> &)': не удалось вывести аргумент шаблон для 'const std::basic_string<_Elem,_Traits,_Alloc> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\memory(1988,32): message : или       "std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::shared_ptr<_Ty> &)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): message : 'std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::shared_ptr<_Ty> &)': не удалось вывести аргумент шаблон для 'const std::shared_ptr<_Ty> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\memory(3641,32): message : или       "std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::unique_ptr<_Ty2,_Dx2> &)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): message : 'std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::unique_ptr<_Ty2,_Dx2> &)': не удалось вывести аргумент шаблон для 'const std::unique_ptr<_Ty2,_Dx2> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(687,32): message : или       "std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const char *)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : инициализация: невозможно преобразовать "_Ty" в "const char *"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(731,32): message : или       "std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,char)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : инициализация: невозможно преобразовать "_Ty" в "char"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(767,31): message : или       "std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,const char *)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : инициализация: невозможно преобразовать "_Ty" в "const char *"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(812,31): message : или       "std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,char)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : инициализация: невозможно преобразовать "_Ty" в "char"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(850,32): message : или       "std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const _Elem *)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): message : 'std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const _Elem *)': не удалось вывести аргумент шаблон для 'const _Elem *' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(893,32): message : или       "std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,_Elem)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): message : "std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,_Elem)": в шаблон параметр "_Elem" неоднозначен
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): message : может быть "_Ty"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): message : или       "char"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): message : 'std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,_Elem)': не удалось вывести аргумент шаблон для '_Elem' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(929,31): message : или       "std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,const signed char *)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : инициализация: невозможно преобразовать "_Ty" в "const signed char *"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(935,31): message : или       "std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,signed char)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : инициализация: невозможно преобразовать "_Ty" в "signed char"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(940,31): message : или       "std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,const unsigned char *)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : инициализация: невозможно преобразовать "_Ty" в "const unsigned char *"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(946,31): message : или       "std::basic_ostream<char,_Traits> &std::operator <<(std::basic_ostream<char,_Traits> &,unsigned char)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : инициализация: невозможно преобразовать "_Ty" в "unsigned char"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(1004,9): message : или       "_Ostr &&std::operator <<(_Ostr &&,const _Ty &)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): message : "_Ostr &&std::operator <<(_Ostr &&,const _Ty &)": не удается вывести аргумент шаблон для "__formal"
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\ostream(1081,32): message : или       "std::basic_ostream<_Elem,_Traits> &std::operator <<(std::basic_ostream<_Elem,_Traits> &,const std::error_code &)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : инициализация: невозможно преобразовать "_Ty" в "const std::error_code &"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : Причина: невозможно преобразовать "_Ty" в "const std::error_code"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,30): message : Для выполнения данного преобразования нет доступного оператора преобразования, определенного пользователем, или вызов оператора невозможен
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(12,14): message : при попытке сопоставить список аргументов "(std::ostream, _Ty)"
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,23): error C2676: бинарный "==": "_Ty" не определяет этот оператор или преобразование к типу приемлемо к встроенному оператору
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\utility(482,27): message : может быть "bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::pair<_Ty1,_Ty2> &,const std::pair<_Uty1,_Uty2> &)': не удалось вывести аргумент шаблон для 'const std::pair<_Ty1,_Ty2> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xutility(1656,5): message : или       "bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::reverse_iterator<_BidIt> &,const std::reverse_iterator<_BidIt2> &) noexcept(<expr>)': не удалось вывести аргумент шаблон для 'const std::reverse_iterator<_BidIt> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xutility(4264,5): message : или       "bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::move_iterator<_Iter> &,const std::move_iterator<_Iter2> &) noexcept(<expr>)': не удалось вывести аргумент шаблон для 'const std::move_iterator<_Iter> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xmemory(1034,30): message : или       "bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::allocator<_Ty> &,const std::allocator<_Other> &) noexcept': не удалось вывести аргумент шаблон для 'const std::allocator<_Ty> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(5009,30): message : или       "bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const std::basic_string<_Elem,_Traits,_Alloc> &) noexcept': не удалось вывести аргумент шаблон для 'const std::basic_string<_Elem,_Traits,_Alloc> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(5015,30): message : или       "bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const )"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem *const )': не удалось вывести аргумент шаблон для 'const std::basic_string<_Elem,_Traits,_Alloc> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\xstring(5034,17): message : или       "bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const _Elem *const ,const std::basic_string<_Elem,_Traits,_Alloc> &)': не удалось вывести аргумент шаблон для 'const _Elem *const ' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\memory(1879,17): message : или       "bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::shared_ptr<_Ty> &,const std::shared_ptr<_Ty0> &) noexcept': не удалось вывести аргумент шаблон для 'const std::shared_ptr<_Ty> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\memory(1921,17): message : или       "bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::shared_ptr<_Ty> &,std::nullptr_t) noexcept': не удалось вывести аргумент шаблон для 'const std::shared_ptr<_Ty> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\memory(1932,17): message : или       "bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(std::nullptr_t,const std::shared_ptr<_Ty> &) noexcept': не удалось вывести аргумент шаблон для 'const std::shared_ptr<_Ty> &' из '_Ty'
+          with
+          [
+              _Ty=std::string
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\memory(3513,30): message : или       "bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,const std::unique_ptr<_Ty2,_Dx2> &)': не удалось вывести аргумент шаблон для 'const std::unique_ptr<_Ty,_Dx> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\memory(3561,30): message : или       "bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::unique_ptr<_Ty,_Dx> &,std::nullptr_t) noexcept': не удалось вывести аргумент шаблон для 'const std::unique_ptr<_Ty,_Dx> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\memory(3567,17): message : или       "bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(std::nullptr_t,const std::unique_ptr<_Ty,_Dx> &) noexcept': не удалось вывести аргумент шаблон для 'const std::unique_ptr<_Ty,_Dx> &' из '_Ty'
+          with
+          [
+              _Ty=std::string
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\iterator(307,17): message : или       "bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &,const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &) noexcept': не удалось вывести аргумент шаблон для 'const std::istream_iterator<_Ty,_Elem,_Traits,_Diff> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\iterator(489,17): message : или       "bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::istreambuf_iterator<_Elem,_Traits> &,const std::istreambuf_iterator<_Elem,_Traits> &)': не удалось вывести аргумент шаблон для 'const std::istreambuf_iterator<_Elem,_Traits> &' из '_Ty'
+          with
+          [
+              _Ty=std::vector<std::string,std::allocator<std::string>>
+          ]
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.37.32822\include\vector(2221,30): message : или       "bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)"
+C:\Users\pavlu\OneDrive\Documents\!учеба\2 курс\OOP\лаба №2\laba2\laba2\string.cpp(25,21): message : 'bool std::operator ==(const std::vector<_Ty,_Alloc> &,const std::vector<_Ty,_Alloc> &)': не удалось вывести аргумент шаблон для 'const std::vector<_Ty,_Alloc> &' из '_Ty'
+          with
+          [
+              _Ty=std::string
+          ]

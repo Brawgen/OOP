@@ -7,9 +7,10 @@ class String
 {
 public:
 	String();
+	int find();
 
 
 private:
-	std::vector < std::string > string;
+	std::vector < std::vector<std::string> > string;
 	int size;
 };

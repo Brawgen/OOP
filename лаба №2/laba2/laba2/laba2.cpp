@@ -5,5 +5,7 @@
 
 int main()
 {
+    setlocale(LC_ALL, "ru");
     String as;
+    as.find();
 }
