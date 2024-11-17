@@ -1,11 +1,16 @@
 ﻿#include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
-#include "string.h"
+#include "MyString.h"
 
 int main()
 {
     setlocale(LC_ALL, "ru");
-    String as;
-    as.find();
+    MyString as("stdfile.txt");
+    MyString SA("stdfile1.txt");
+    as.Show();
+    int l = as.Find(SA);
+    std::cout << l;
+
 }
