@@ -65,7 +65,7 @@ int MyString::Find(MyString substring)
 		}
 
 	}
-	return -1;
+	return -1; 
 }
 
 
